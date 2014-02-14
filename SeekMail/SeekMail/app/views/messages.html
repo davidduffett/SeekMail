@@ -1,0 +1,22 @@
+﻿<div>
+    <h1>Message Log</h1>
+
+    <table class="data-grid">
+        <tr>
+            <th>Sent</th>
+            <th>To</th>
+        </tr>
+        <tr ng-repeat="message in messages">
+            <td>{{ message.Sent | date:"medium" }}</td>
+            <td>{{ message.To }}</td>
+        </tr>
+        <tr ng-show="loading">
+            <td colspan="2">Loading messages...</td>
+        </tr>
+    </table>
+    
+    <p>
+        <a ng-show="pages.previous" ng-href="#/messages/{{ pages.previous }}">&laquo; Previous</a>
+        <a ng-show="pages.next" ng-href="#/messages/{{ pages.next }}">Next &raquo;</a>
+    </p>
+</div>

@@ -1,0 +1,39 @@
+﻿/* Grid like table style */
+table.data-grid { border-collapse: collapse; }
+table.data-grid tr { border: solid 1px #BBB; }
+table.data-grid th, table.data-grid td { padding: 5px; border-left: solid 1px #BBB; vertical-align: middle; border-bottom: solid 1px #BBB; }
+table.data-grid th { background-color: #DDD; }
+table.data-grid tr:nth-of-type(even) { background-color: #F8F8F8; }
+table.data-grid tr:hover { background-color: #FFFCB9; }
+
+/* Nicer looking buttons */
+.btn
+{
+    font-family: Verdana;
+	border:solid 1px #A5A5A5; 
+	padding:3px 15px; 
+	cursor:pointer; 
+    background-color: #DDDDDD;
+    color: #000;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F4F4F4), to(#EEEEEE)); 
+    background-image: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F4F4F4', endColorstr='#EEEEEE');
+	text-align:center; 
+	text-decoration:none; 
+	vertical-align: middle;
+    border-radius: 0.3em;
+    margin-bottom: 1px;  /* Provides room for the button moving 1px downwards when active */
+}
+.btn:hover {
+    text-decoration: none;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DDDDDD)); 
+    background-image: -moz-linear-gradient(top, #EDEDED, #DDDDDD);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EDEDED', endColorstr='#DDDDDD');
+}
+.btn:active {
+    position:relative; 
+    top:1px;
+}
+.btn:disabled {
+    color: #A5A5A5;
+}

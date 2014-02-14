@@ -1,0 +1,39 @@
+﻿<h1>New message template</h1>
+
+<form name="NewTemplateForm" novalidate ng-submit="post(NewTemplateForm)">
+    <fieldset>
+        <p>
+            <label for="Name">Name</label>
+            <input name="Name" type="text" ng-model="data.Name" required />
+            <span ng-show="NewTemplateForm.Name.$error.required">* Required</span>
+        </p>
+        <p>
+            <label for="FromName">From name</label>
+            <input name="FromName" type="text" ng-model="data.FromName" />
+        </p>
+        <p>
+            <label for="FromEmail">From email</label>
+            <input name="FromEmail" type="email" ng-model="data.FromEmail" required />
+            <span ng-show="NewTemplateForm.FromEmail.$error.required">* Required</span>
+            <span ng-show="NewTemplateForm.FromEmail.$error.email">* Not a valid email address!</span>
+        </p>
+        <p>
+            <label for="Subject">Subject</label>
+            <input name="Subject" type="text" ng-model="data.Subject" required />
+            <span ng-show="NewTemplateForm.Subject.$error.required">* Required</span>
+        </p>
+        <p>
+            <label for="TextBody">Text body</label>
+            <textarea name="TextBody" rows="5" cols="30" ng-model="data.TextBody" required></textarea>
+            <span ng-show="NewTemplateForm.TextBody.$error.required">* Required</span>
+        </p>
+        <p>
+            <label for="HtmlBody">HTML body</label>
+            <textarea name="HtmlBody" rows="5" cols="30" ng-model="data.HtmlBody"></textarea>
+        </p>
+        <p>
+            <input class="btn" type="submit" value="Save" ng-disabled="NewTemplateForm.$invalid" />
+            <a href="#/templates">Cancel</a>
+        </p>
+    </fieldset>
+</form>

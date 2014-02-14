@@ -1,0 +1,28 @@
+﻿<h1>Subscribers</h1>
+
+<form name="NewSubscriberForm" novalidate ng-submit="addSubscriber(NewSubscriberForm)">
+    <fieldset>
+        <p>
+            <label for="EmailAddress">Add email address</label>
+            <input name="EmailAddress" type="email" ng-model="newSubscriber.emailAddress" required />
+            <input class="btn" type="submit" value="Add subscriber" ng-disabled="NewSubscriberForm.$invalid" />
+            <span ng-show="NewSubscriberForm.EmailAddress.$error.email">* Not a valid email address!</span>
+        </p>
+    </fieldset>
+</form>
+
+<table class="data-grid">
+    <tr>
+        <th>Email address</th>
+        <th>Subscribed</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="subscriber in subscribers">
+        <td>{{ subscriber.EmailAddress }}</td>
+        <td>{{ subscriber.Created | date:"medium" }}</td>
+        <td><button class="btn" ng-click="removeSubscriber($index)">Unsubscribe</button></td>
+    </tr>
+    <tr ng-show="loading">
+        <td colspan="3">Loading...</td>
+    </tr>
+</table>

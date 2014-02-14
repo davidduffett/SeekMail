@@ -1,0 +1,42 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html ng-app="seekMailApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/global.css" />
+    <link rel="stylesheet" href="~/Content/site.css" />
+    @RenderSection("Head", false)
+</head>
+<body>
+    <header class="site-header">
+        <ul class="site-menu">
+            <li>
+                <a href="~/"><img src="~/Content/seek_logo.gif" alt="Seek" /></a>
+            </li>
+            <li>
+                <a href="#/templates">Templates</a>
+            </li>
+            <li>
+                <a href="#/subscribers">Subscribers</a>
+            </li>
+            <li>
+                <a href="#/messages">Message Log</a>
+            </li>
+        </ul>
+    </header>
+
+    <div class="site-body">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/app/app.js"></script>
+    @Scripts.Render("~/bundles/services")
+    @Scripts.Render("~/bundles/controllers")
+
+    @RenderSection("Scripts", false)
+</body>
+</html>

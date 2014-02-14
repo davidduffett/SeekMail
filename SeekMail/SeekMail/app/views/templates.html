@@ -1,0 +1,27 @@
+﻿<div>
+    <h1>Message Templates</h1>
+    
+    <p>
+        <a class="btn" href="#/templates/new">New template</a>
+    </p>
+
+    <table class="data-grid" ng-controller="templatesController">
+        <tr>
+            <th>Name</th>
+            <th>Created</th>
+            <th></th>
+        </tr>
+        <tr ng-show="loading">
+            <td colspan="3">Loading templates...</td>
+        </tr>
+        <tr ng-repeat="template in templates">
+            <td><a href="#/templates/{{ template.Id }}">{{ template.Name }}</a></td>
+            <td>{{ template.Created | date:"medium" }}</td>
+            <td>
+                <button class="btn" ng-click="testMessage($index)" ng-disabled="template.sending">
+                    {{ template.sending ? "Sending..." : "Send test message" }}
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
